@@ -1,0 +1,28 @@
+{
+  "name": "pte-scoring",
+  "version": "1.0.0",
+  "description": "PTE Academic speaking practice with AI scoring",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lgitvh/PTE-Scoring.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lgitvh/PTE-Scoring/issues"
+  },
+  "homepage": "https://github.com/lgitvh/PTE-Scoring#readme",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.3.0",
+    "express": "^5.3.0"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  }
+}

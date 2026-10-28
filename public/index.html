@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PTE Speaking Practice</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">PTE Speaking Practice</div>
+    <label class="accent-picker">Accent
+      <select id="accent">
+        <option value="en-US">US</option>
+        <option value="en-GB">UK</option>
+        <option value="en-AU">Australia</option>
+        <option value="en-IN">India</option>
+      </select>
+    </label>
+  </header>
+
+  <main class="layout">
+    <nav class="sidebar" aria-label="Tasks">
+      <h2>Tasks</h2>
+      <ul id="task-list"></ul>
+      <h2>Recent scores</h2>
+      <ol id="history" class="history"></ol>
+      <button id="clear-history" class="link" type="button">Clear history</button>
+    </nav>
+
+    <section class="stage">
+      <div id="support-warning" class="notice warn" hidden>
+        Your browser doesn't support speech recognition. Use Chrome or Edge on desktop for automatic transcripts,
+        or type what you said into the transcript box after recording.
+      </div>
+
+      <div id="welcome" class="card">
+        <h1>Practise PTE Academic speaking with AI scoring</h1>
+        <p>Pick a task on the left. Each question runs on the real test timings: preparation time, a beep, then recording.
+          When you finish, your answer is transcribed and scored on <strong>content</strong>, <strong>oral fluency</strong>
+          and <strong>pronunciation</strong>, with an estimated score on the 10–90 scale and tips on what to improve.</p>
+        <p class="muted">Allow microphone access when your browser asks. Use headphones for listening tasks.</p>
+      </div>
+
+      <div id="question" class="card" hidden>
+        <div class="q-head">
+          <div>
+            <div id="q-task" class="eyebrow"></div>
+            <div id="q-counter" class="muted small"></div>
+          </div>
+          <div class="q-nav">
+            <button id="prev" type="button" class="ghost">‹ Prev</button>
+            <button id="next" type="button" class="ghost">Next ›</button>
+          </div>
+        </div>
+        <p id="q-instructions" class="instructions"></p>
+
+        <div id="q-body"></div>
+
+        <div class="status-panel">
+          <div class="status-row">
+            <span id="status-label" class="status-label">Ready</span>
+            <span id="status-time" class="status-time"></span>
+          </div>
+          <div class="progress"><div id="progress-bar"></div></div>
+          <div class="controls">
+            <button id="start" type="button" class="primary">Start</button>
+            <button id="skip-prep" type="button" hidden>Begin speaking now</button>
+            <button id="stop" type="button" hidden>Finish</button>
+            <button id="retry" type="button" class="ghost" hidden>Try again</button>
+          </div>
+        </div>
+
+        <div id="transcript-wrap" hidden>
+          <label for="transcript" class="small muted">Transcript</label>
+          <textarea id="transcript" rows="3" placeholder="Your words will appear here as you speak…"></textarea>
+          <div class="controls">
+            <audio id="playback" controls hidden></audio>
+            <button id="submit" type="button" class="primary" hidden>Get my score</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="result" class="card" hidden></div>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
